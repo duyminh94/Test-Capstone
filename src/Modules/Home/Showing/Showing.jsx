@@ -10,7 +10,6 @@ import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
 import "./Showing.css"
-import Slider from '../../../Components/Slider/Slider';
 
 
 const Showing = () => {
