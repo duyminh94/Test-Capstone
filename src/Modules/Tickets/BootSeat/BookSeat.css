@@ -209,3 +209,11 @@
     font-size: 14px;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .booking .booking-seats .booking-seat {
+    width: 48px;
+    height: 32px;
+    margin: 1px;
+  }
+}

@@ -1,13 +1,17 @@
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import Register from "../Modules/Auth/Register";
-import Login from "../Modules/Auth/Login";
-import AuthLayout from "../Modules/Auth/AuthLayout";
-import MainLayout from "../Components/MainLayout";
-import Home from "../Modules/Home/Home";
-import Movie from "../Modules/Movie/";
-import Ticket from "../Modules/Tickets/Ticket";
-import CheckRouter from "./CheckRouter";
-import Users from "../Modules/Users/Users";
+import Error404 from "../Components/Error/Error404";
+
+const MainLayout = lazy(() => import("../Components/MainLayout"));
+const AuthLayout = lazy(() => import("../Modules/Auth/AuthLayout"));
+const Register = lazy(() => import("../Modules/Auth/Register"))
+const Login = lazy(() => import("../Modules/Auth/Login"))
+const Home = lazy(() => import("../Modules/Home/Home"))
+const Movie = lazy(() => import("../Modules/Movie"))
+const Ticket = lazy(() => import("../Modules/Tickets/Ticket"))
+const Users = lazy(() => import("../Modules/Users/Users"))
+const CheckRouter = lazy(() => import("./CheckRouter"))
+
 
 
 const router = createBrowserRouter([
@@ -34,6 +38,8 @@ const router = createBrowserRouter([
       { path: "/login", element: <Login /> },
     ],
   },
+
+  {path: "*" , element: <Error404/>}
 ]);
 
 export default router;
